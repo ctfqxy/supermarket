@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="demo">
+			<input type="text" v-model="message"/>
+			<p>{{message}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//数据
+		let data = {
+			message:"hello,Vue!"
+		}
+		
+		//Vm实例
+		var vm = new Vue({
+			el:"#demo",
+			data:data
+		});
+	</script>
+</html>

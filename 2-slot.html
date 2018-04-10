@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2>自定义组件</h2>
+			<custom>
+				{{message}}
+			</custom>
+		</div>
+	</body>
+	<script type="text/javascript">
+		Vue.component('custom',{
+			template:`
+			    <div>
+				    <p>我是第一个提醒</p>
+			    </div>
+			`
+		})
+			
+			
+		new Vue({
+			el:'#app',
+			data:{
+				message:"我是父组件的数据"
+			}
+		})
+	</script>
+</html>

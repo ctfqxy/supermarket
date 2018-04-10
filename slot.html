@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2>自定义组件</h2>
+			<custom>
+				<div>我是HTML结构</div>
+			</custom>
+		</div>
+	</body>
+	<script type="text/javascript">
+		Vue.component('custom',{
+			template:`
+			    <div>
+				    <slot>
+				    	<p>这是第1个提醒</p>
+				    	<p>这是第2个提醒</p>
+				    	<p>这是第3个提醒</p>
+				    </slot>
+			    </div>
+			`
+		})
+			
+			
+		new Vue({
+			el:'#app'
+		})
+	</script>
+</html>

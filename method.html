@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="demo">
+			<span v-on:click="clickHandle">{{message}}</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let obj = {
+			message:"hello,Vue!"
+		}
+		
+		new Vue({
+			el:"#demo",
+			data:obj,
+			methods:{
+				clickHandle(){
+					alert("click")
+				}
+			}
+		});
+	</script>
+</html>

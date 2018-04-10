@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+      <div id="app">
+      	<h3>在父组件中使用count</h3>
+      	<p>{{count}}</p>
+        <custom-component :count='count' @increment-click='countHandle'></custom-component>
+      </div>
+  </body>
+  <script type="text/javascript">
+      Vue.component('custom-component',{
+      	  props:{
+      	  	count:{
+      	  		type:Number
+      	  	}
+      	  },
+      	  data(){
+      	  	return{
+      	  		incrementCount:this.count
+      	  	}
+      	  },
+          template:`
+              <div>
+                  <h2>我是一个自定义的组件</h2>
+                  <input type="button" value="改变" @click="changeCount"/>
+                  {{incrementCount}}
+              </div>
+          `,
+          methods:{
+          	changeCount(){
+          		this.incrementCount++;
+          		this.$emit('increment-click');
+          	}
+          }
+      })
+      new Vue({
+          el:"#app",
+          data:{
+            count:0
+          },
+          methods:{
+          	countHandle(){
+          		this.count++;
+          	}
+          }
+      })
+  </script>
+</html>
